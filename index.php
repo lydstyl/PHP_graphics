@@ -1,8 +1,8 @@
 <?php
-    //connexion BDD à include ?
+    // connexion BDD à include ?
     $link = mysqli_connect("localhost","root", "", "graphic") or die("Impossible de se connecter : ".mysqli_error());
     mysqli_query($link, 'SET NAMES UTF8');
-    //création d'un tableau à partir de la base de données
+    // création d'un tableau à partir de la base de données
     $resultat = mysqli_query($link, 'SELECT * FROM `composition`');
     $assignTable = [];
     while($data = mysqli_fetch_assoc($resultat)){
@@ -18,7 +18,7 @@
             $value['poids']
         ));
     }
-    //création d'un tableau string pour js
+    // création d'un tableau string pour js
     $jsTab = '[';
     for ($i=0; $i < 4; $i++ ) { 
       $jsTab .= '["';
